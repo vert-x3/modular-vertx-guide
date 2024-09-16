@@ -1,6 +1,129 @@
 = Modular Vert.x Guide
 Julien Viet <julien@julienviet.com>
 
-Vert.x in a modular world.
+Starting 5.0, Vert.x supports building modular applications and services with the Vert.x stack.
 
-To be written.
+== Module maturity
+
+Vert.x strives to deliver the most mature JPMS level support (see https://nipafx.dev/java-modules-jpms-maturity-model/).
+
+== Supported Java services
+
+== Native transports
+
+== OpenSSL
+
+== Compression
+
+== Module name reference
+
+Here is the list of Vert.x module names
+
+* _Codegen_
+** `io.vertx.codegen.api`
+** `io.vertx.codegen.json`
+* _Core_
+** `io.vertx.core`
+* _Web_
+** `io.vertx.web`
+** `io.vertx.web.common`
+** `io.vertx.web.openapi.router`
+** `io.vertx.web.validation`
+** `io.vertx.web.proxy`
+** `io.vertx.web.graphql`
+** `io.vertx.web.client`
+** `io.vertx.web.sstore.redis`
+** `io.vertx.web.sstore.cookie`
+** `io.vertx.web.apiservice`
+*** `io.vertx.web.template.mvel`
+*** `io.vertx.web.template.freemarker`
+*** `io.vertx.web.template.thymeleaf`
+*** `io.vertx.web.template.rocker`
+*** `io.vertx.web.template.handlebars`
+*** `io.vertx.web.template.jte`
+* _Sql Client_
+** `io.vertx.sql.client`
+** `io.vertx.sql.client.pg`
+** `io.vertx.sql.client.mssql`
+** `io.vertx.sql.client.db2`
+** `io.vertx.sql.client.mysql`
+** `io.vertx.sql.client.oracle`
+** `io.vertx.sql.client.jdbc`
+** `io.vertx.sql.client.templates`
+* _Redis Client_
+** `io.vertx.redis.client`
+* _Mail Client_
+** `io.vertx.mail.client`
+* _Cassandra Client_
+** `io.vertx.cassandra.client`
+* _Consul Client_
+** `io.vertx.consul.client`
+* _Amqp Client_
+** `io.vertx.amqp.client`
+* _Mongo Client_
+** `io.vertx.mongo.client`
+* _Stomp_
+** `io.vertx.stomp`
+* _Circuit Breaker_
+** `io.vertx.circuitbreaker`
+* _Uri Template_
+** `io.vertx.uritemplate`
+* _MQTT_
+** `io.vertx.mqtt`
+* _gRPC_
+** ` io.vertx.grpc.common`
+** `io.vertx.grpc.client`
+** `io.vertx.grpc.server`
+* _JUnit 5_
+** `io.vertx.testing.junit5`
+* _Unit_
+** `io.vertx.testing.unit`
+* _Dropwizard Metrics_
+** `io.vertx.metrics.dropwizard`
+* _Micrometer Metrics_
+** `io.vertx.metrics.micrometer`
+* _Zipkin Tracing_
+** `io.vertx.tracing.zipkin`
+* _Otel Metrics_
+** `io.vertx.tracing.opentelemetry`
+* _Hazelcast Cluster Manager_
+** `io.vertx.clustermanager.hazelcast`
+* _Config_
+* `io.vertx.config`
+* `io.vertx.config.hocon`
+* `io.vertx.config.git`
+* `io.vertx.config.redis`
+* `io.vertx.config.configmap`
+* `io.vertx.config.spring`
+* `io.vertx.config.yaml`
+* `io.vertx.config.consul`
+* _Proton_
+** `io.vertx.proton`
+* _Open API_
+** `io.vertx.openapi`
+* _Auth_
+** `io.vertx.auth.common`
+** `io.vertx.auth.htpasswd`
+** `io.vertx.auth.abac`
+** `io.vertx.auth.ldap`
+** `io.vertx.auth.webauthn`
+** `io.vertx.auth.sqlclient`
+** `io.vertx.auth.oauth2`
+** `io.vertx.auth.htdigest`
+** `io.vertx.auth.jwt`
+** `io.vertx.auth.properties`
+** `io.vertx.auth.webauthn4j`
+** `io.vertx.auth.otp`
+* _Service Proxy_
+** `io.vertx.serviceproxy`
+* _HTTP Proxy_
+** `io.vertx.httpproxy`
+* _Service Resolver_
+** `io.vertx.serviceresolver`
+* _Health checks_
+** `io.vertx.healthcheck`
+* _Json Schema_
+** `io.vertx.jsonschema`
+* _Event Bus Bridge_
+** `io.vertx.eventbusbridge`
+
