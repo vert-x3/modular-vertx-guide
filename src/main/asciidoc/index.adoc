@@ -1,0 +1,6 @@
+= Modular Vert.x Guide
+Julien Viet <julien@julienviet.com>
+
+Vert.x in a modular world.
+
+To be written.
