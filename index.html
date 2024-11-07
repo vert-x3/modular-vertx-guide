@@ -435,29 +435,530 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Modular Vert.x Guide</h1>
 <div class="details">
 <span id="author" class="author">Julien Viet</span><br>
 <span id="email" class="email"><a href="mailto:julien@julienviet.com">julien@julienviet.com</a></span><br>
 </div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_module_maturity">Module maturity</a></li>
+<li><a href="#_supported_java_services">Supported Java services</a></li>
+<li><a href="#_native_transports">Native transports</a></li>
+<li><a href="#_openssl">OpenSSL</a></li>
+<li><a href="#_compression">Compression</a></li>
+<li><a href="#_module_name_reference">Module name reference</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Vert.x in a modular world.</p>
+<p>Starting 5.0, Vert.x supports building modular applications and services with the Vert.x stack.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_module_maturity">Module maturity</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>To be written.</p>
+<p>Vert.x strives to deliver the most mature JPMS level support (see <a href="https://nipafx.dev/java-modules-jpms-maturity-model/" class="bare">https://nipafx.dev/java-modules-jpms-maturity-model/</a>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supported_java_services">Supported Java services</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_native_transports">Native transports</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openssl">OpenSSL</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compression">Compression</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_module_name_reference">Module name reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is the list of Vert.x module names</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Codegen</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.codegen.api</code></p>
+</li>
+<li>
+<p><code>io.vertx.codegen.json</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Core</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.core</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Web</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.web</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.common</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.openapi.router</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.validation</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.proxy</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.graphql</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.client</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.sstore.redis</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.sstore.cookie</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.apiservice</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.web.template.mvel</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.template.freemarker</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.template.thymeleaf</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.template.rocker</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.template.handlebars</code></p>
+</li>
+<li>
+<p><code>io.vertx.web.template.jte</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Sql Client</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.sql.client</code></p>
+</li>
+<li>
+<p><code>io.vertx.sql.client.pg</code></p>
+</li>
+<li>
+<p><code>io.vertx.sql.client.mssql</code></p>
+</li>
+<li>
+<p><code>io.vertx.sql.client.db2</code></p>
+</li>
+<li>
+<p><code>io.vertx.sql.client.mysql</code></p>
+</li>
+<li>
+<p><code>io.vertx.sql.client.oracle</code></p>
+</li>
+<li>
+<p><code>io.vertx.sql.client.jdbc</code></p>
+</li>
+<li>
+<p><code>io.vertx.sql.client.templates</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Redis Client</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.redis.client</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Mail Client</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.mail.client</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Cassandra Client</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.cassandra.client</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Consul Client</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.consul.client</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Amqp Client</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.amqp.client</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Mongo Client</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.mongo.client</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Stomp</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.stomp</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Circuit Breaker</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.circuitbreaker</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Uri Template</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.uritemplate</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>MQTT</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.mqtt</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>gRPC</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>` io.vertx.grpc.common`</p>
+</li>
+<li>
+<p><code>io.vertx.grpc.client</code></p>
+</li>
+<li>
+<p><code>io.vertx.grpc.server</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>JUnit 5</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.testing.junit5</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Unit</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.testing.unit</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Dropwizard Metrics</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.metrics.dropwizard</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Micrometer Metrics</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.metrics.micrometer</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Zipkin Tracing</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.tracing.zipkin</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Otel Metrics</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.tracing.opentelemetry</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Hazelcast Cluster Manager</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.clustermanager.hazelcast</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Config</em></p>
+</li>
+<li>
+<p><code>io.vertx.config</code></p>
+</li>
+<li>
+<p><code>io.vertx.config.hocon</code></p>
+</li>
+<li>
+<p><code>io.vertx.config.git</code></p>
+</li>
+<li>
+<p><code>io.vertx.config.redis</code></p>
+</li>
+<li>
+<p><code>io.vertx.config.configmap</code></p>
+</li>
+<li>
+<p><code>io.vertx.config.spring</code></p>
+</li>
+<li>
+<p><code>io.vertx.config.yaml</code></p>
+</li>
+<li>
+<p><code>io.vertx.config.consul</code></p>
+</li>
+<li>
+<p><em>Proton</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.proton</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Open API</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.openapi</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Auth</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.auth.common</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.htpasswd</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.abac</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.ldap</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.webauthn</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.sqlclient</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.oauth2</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.htdigest</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.jwt</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.properties</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.webauthn4j</code></p>
+</li>
+<li>
+<p><code>io.vertx.auth.otp</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Service Proxy</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.serviceproxy</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>HTTP Proxy</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.httpproxy</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Service Resolver</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.serviceresolver</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Health checks</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.healthcheck</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Json Schema</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.jsonschema</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Event Bus Bridge</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>io.vertx.eventbusbridge</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-11-07 05:02:13 UTC
+Last updated 2024-11-07 17:16:41 UTC
 </div>
 </div>
 </body>
