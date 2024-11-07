@@ -71,7 +71,7 @@ Here is the list of Vert.x module names
 * _MQTT_
 ** `io.vertx.mqtt`
 * _gRPC_
-** ` io.vertx.grpc.common`
+** `io.vertx.grpc.common`
 ** `io.vertx.grpc.client`
 ** `io.vertx.grpc.server`
 * _JUnit 5_
