@@ -816,7 +816,29 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h2 id="_native_transports">Native transports</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Todo.</p>
+<p>Native transports are supported.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.transport.classes.${native.detected.transport}</code> is required as it contains the transport classes.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.transport.${native.transport}.${os.name}.${os.detected.arch}</code> contains the native library and its presence is only required at runtime.</p>
+</div>
+<div class="paragraph">
+<p>You can add them to the JVM launch command with <code>--add-modules --add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime, however this binds your module to a specific os/architecture:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to module-info.java</span>
+requires io.netty.transport.classes.kqueue;
+requires io.netty.transport.kqueue.osx.aarch_64;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#native-transports">example with OpenSSL</a> among Vert.x JPMS examples.</p>
 </div>
 </div>
 </div>
@@ -830,13 +852,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p>The module <code>io.netty.tcnative.classes.openssl</code> is required as it contains the OpenSSL Netty classes.</p>
 </div>
 <div class="paragraph">
-<p>The module <code>io.netty.internal.tcnative.openssl.${os.name}.${os.arch}</code> contains the native library and its presence is only required at runtime.</p>
+<p>The module <code>io.netty.internal.tcnative.openssl.${os.detected.name}.${os.detected.arch}</code> contains the native library and its presence is only required at runtime.</p>
 </div>
 <div class="paragraph">
 <p>You can add them to the JVM launch command with <code>--add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}</code>.</p>
 </div>
 <div class="paragraph">
-<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.</p>
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime, however this binds your module to a specific os/architecture:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -846,7 +868,7 @@ requires io.netty.internal.tcnative.openssl.osx.aarch_64;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/openssl">example with OpenSSL</a> among Vert.x JPMS examples.</p>
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#open-ssl">example with OpenSSL</a> among Vert.x JPMS examples.</p>
 </div>
 </div>
 </div>
@@ -883,7 +905,7 @@ requires com.github.luben.zstd_jni;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/compression">example with Brotli</a> among Vert.x JPMS examples.</p>
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression">example with Brotli</a> among Vert.x JPMS examples.</p>
 </div>
 </div>
 </div>
@@ -1362,7 +1384,7 @@ requires com.github.luben.zstd_jni;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-12-09 13:32:30 UTC
+Last updated 2024-12-09 13:41:31 UTC
 </div>
 </div>
 </body>
