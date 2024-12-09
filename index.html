@@ -561,12 +561,12 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_event_bus_bridge">Event bus bridge</a></li>
 </ul>
 </li>
-<li><a href="#_java_services">Java services</a></li>
+<li><a href="#_java_service_providers">Java service providers</a></li>
 <li><a href="#_native_transports">Native transports</a></li>
 <li><a href="#_openssl">OpenSSL</a></li>
 <li><a href="#_http_compression">HTTP Compression</a></li>
 <li><a href="#_logging">Logging</a></li>
-<li><a href="#_module_name_reference">Module name reference</a></li>
+<li><a href="#_modules_reference">Modules reference</a></li>
 </ul>
 </div>
 </div>
@@ -805,7 +805,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="sect1">
-<h2 id="_java_services">Java services</h2>
+<h2 id="_java_service_providers">Java service providers</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Todo.</p>
@@ -824,7 +824,29 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h2 id="_openssl">OpenSSL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Todo.</p>
+<p>OpenSSL is supported.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.tcnative.classes.openssl</code> is required as it contains the OpenSSL Netty classes.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.internal.tcnative.openssl.${os.name}.${os.arch}</code> contains the native library and its presence is only required at runtime.</p>
+</div>
+<div class="paragraph">
+<p>You can add them to the JVM launch command with <code>--add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to your module-info.java</span>
+requires io.netty.tcnative.classes.openssl;
+requires io.netty.internal.tcnative.openssl.osx.aarch_64;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/openssl">example with OpenSSL</a> among Vert.x JPMS examples.</p>
 </div>
 </div>
 </div>
@@ -832,35 +854,36 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h2 id="_http_compression">HTTP Compression</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Vert.x supports <em>gzip</em> and <em>deflate</em> algorithms out of the box, however <em>brotli</em> and <em>zstd</em> algorithms requires you to add dependencies:</p>
+<p>Vert.x supports <em>gzip</em> and <em>deflate</em> algorithms out of the box, however <em>brotli</em> and <em>zstd</em> algorithms requires you to respectively add the following dependencies:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>for Brotli: <code>com.aayushatharva.brotli4j:brotli4j</code></p>
+<p>Brotli: <code>com.aayushatharva.brotli4j:brotli4j</code></p>
 </li>
 <li>
-<p>for Zstd: <code>com.github.luben:zstd-jni</code></p>
+<p>Zstd: <code>com.github.luben:zstd-jni</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Indeed, these dependencies are optional since not everyone need them.</p>
+<p>These dependencies are optional since not everyone need them and when used, they are required at runtime instead of compile time.</p>
 </div>
 <div class="paragraph">
-<p>You can add them to your module descriptor info, even though your application will not use them:</p>
+<p>You can add them to the JVM launch command with <code>--add-modules com.aayushatharva.brotli4j,com.github.luben.zstd_jni</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">requires com.aayushatharva.brotli4j;
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to your module-info.java</span>
+requires com.aayushatharva.brotli4j;
 requires com.github.luben.zstd_jni;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/compression">example with Brotli</a> among Vert.x examples.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively, since those modules are only required at runtime, you can add them with <code>--add-modules com.aayushatharva.brotli4j,com.github.luben.zstd_jni</code>.</p>
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/compression">example with Brotli</a> among Vert.x JPMS examples.</p>
 </div>
 </div>
 </div>
@@ -873,7 +896,7 @@ requires com.github.luben.zstd_jni;</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_module_name_reference">Module name reference</h2>
+<h2 id="_modules_reference">Modules reference</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here is the list of Vert.x module names</p>
@@ -1339,7 +1362,7 @@ requires com.github.luben.zstd_jni;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-12-09 10:58:31 UTC
+Last updated 2024-12-09 13:32:30 UTC
 </div>
 </div>
 </body>
