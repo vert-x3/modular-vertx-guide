@@ -1,19 +1,155 @@
-= Modular Vert.x Guide
-Julien Viet <julien@julienviet.com>
+= Modular {VertX} Guide
+:VertX: Vert.x
+:v5: 5
+:v5x: 5.x
+:VertX5: Vert.x 5
 
-Starting 5.0, Vert.x supports building modular applications and services with the Vert.x stack.
+Starting {v5}, {VertX} supports building modular applications and services with the {VertX} stack.
 
-== Module maturity
+This document aims to guide the developer toward building and running a modular applications with {VertX}.
 
-Vert.x strives to deliver the most mature JPMS level support (see https://nipafx.dev/java-modules-jpms-maturity-model/).
+== Definitions
 
-== Supported Java services
+We borrow terminology from this https://github.com/tfesenko/Java-Modules-JPMS-CheatSheet/blob/master/README.md#types-of-modules-named-and-unnamed[document] for the following names:
+
+- _named_ module
+- _explicit_ module
+- _automatic_ module
+
+== Maturity model
+
+{VertX} strives to deliver the most mature JPMS level support (see https://nipafx.dev/java-modules-jpms-maturity-model/).
+
+Most {VertX} components support level 3 (according to the maturity model) and explicit modules, however a few modules have been left aside, due to constraints preventing proper modularity to happen, often due to a faulty dependency, e.g. a split package.
+
+== Components
+
+=== Core
+
+|===
+|Artifact ID| Module name|Type
+
+|_vertx-core_
+|`io.vertx.core`
+|explicit
+
+|_vertx-core-logging_
+|`io.vertx.core.logging`
+|explicit
+|===
+
+==== Dependencies
+
+Transitive dependencies are explicit modules.
+
+- The Netty library `io.netty:*` (See https://github.com/netty/netty/blob/4.2/testsuite-jpms/README.md[Modular Netty])
+- The Jackson library `com.fasterxml.jackson.core:*`
+- Apache Log4j 2 `org.apache.logging.log4j:*`
+- SLF4J `org.slf4j:*`
+
+Optional dependencies are explicit modules.
+
+- Brotli4j `com.aayushatharva.brotli4j:brotli4j`
+- Zstd-jni `com.github.luben:zstd-jni`
+
+=== Auth
+
+=== Service Resolver
+
+=== URI templates
+
+=== Web
+
+=== SQL Client
+
+=== Redis Client
+
+=== Mail Client
+
+=== Cassandra Client
+
+=== Consul Client
+
+=== Amqp Client
+
+=== Mongo Client
+
+=== Stomp
+
+=== Circuit Breaker
+
+=== Health checks
+
+=== Config
+
+=== Json Schema
+
+=== Open API
+
+=== MQTT
+
+=== gRPC
+
+=== JUnit 5
+
+=== Metrics
+
+==== Micrometer Metrics
+
+==== Dropwizard Metrics
+
+=== Tracing
+
+==== Zipkin Tracing
+
+==== Open Telemetry Tracing
+
+==== Clustering
+
+==== Hazelcast Clustering
+
+=== Service Proxy
+
+=== HTTP Proxy
+
+=== Event bus bridge
+
+== Java services
+
+Todo.
 
 == Native transports
 
+Todo.
+
 == OpenSSL
 
-== Compression
+Todo.
+
+== HTTP Compression
+
+{VertX} supports _gzip_ and _deflate_ algorithms out of the box, however _brotli_ and _zstd_ algorithms requires you to add dependencies:
+
+- for Brotli: `com.aayushatharva.brotli4j:brotli4j`
+- for Zstd: `com.github.luben:zstd-jni`
+
+Indeed, these dependencies are optional since not everyone need them.
+
+You can add them to your module descriptor info, even though your application will not use them:
+
+[source,java]
+----
+requires com.aayushatharva.brotli4j;
+requires com.github.luben.zstd_jni;
+----
+
+You can find an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/compression[example with Brotli] among {VertX} examples.
+
+Alternatively, since those modules are only required at runtime, you can add them with `--add-modules com.aayushatharva.brotli4j,com.github.luben.zstd_jni`.
+
+== Logging
+
+Todo.
 
 == Module name reference
 
@@ -24,6 +160,7 @@ Here is the list of Vert.x module names
 ** `io.vertx.codegen.json`
 * _Core_
 ** `io.vertx.core`
+** `io.vertx.core.logging`
 * _Web_
 ** `io.vertx.web`
 ** `io.vertx.web.common`
