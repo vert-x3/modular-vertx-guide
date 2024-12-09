@@ -114,7 +114,7 @@ Optional dependencies are explicit modules.
 
 === Event bus bridge
 
-== Java services
+== Java service providers
 
 Todo.
 
@@ -124,34 +124,52 @@ Todo.
 
 == OpenSSL
 
-Todo.
+OpenSSL is supported.
 
-== HTTP Compression
+The module `io.netty.tcnative.classes.openssl` is required as it contains the OpenSSL Netty classes.
 
-{VertX} supports _gzip_ and _deflate_ algorithms out of the box, however _brotli_ and _zstd_ algorithms requires you to add dependencies:
+The module `io.netty.internal.tcnative.openssl.${os.name}.${os.arch}` contains the native library and its presence is only required at runtime.
 
-- for Brotli: `com.aayushatharva.brotli4j:brotli4j`
-- for Zstd: `com.github.luben:zstd-jni`
+You can add them to the JVM launch command with `--add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}`.
 
-Indeed, these dependencies are optional since not everyone need them.
-
-You can add them to your module descriptor info, even though your application will not use them:
+Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.
 
 [source,java]
 ----
+// Add to your module-info.java
+requires io.netty.tcnative.classes.openssl;
+requires io.netty.internal.tcnative.openssl.osx.aarch_64;
+----
+
+You can find an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/openssl[example with OpenSSL] among {VertX} JPMS examples.
+
+== HTTP Compression
+
+{VertX} supports _gzip_ and _deflate_ algorithms out of the box, however _brotli_ and _zstd_ algorithms requires you to respectively add the following dependencies:
+
+- Brotli: `com.aayushatharva.brotli4j:brotli4j`
+- Zstd: `com.github.luben:zstd-jni`
+
+These dependencies are optional since not everyone need them and when used, they are required at runtime instead of compile time.
+
+You can add them to the JVM launch command with `--add-modules com.aayushatharva.brotli4j,com.github.luben.zstd_jni`.
+
+Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.
+
+[source,java]
+----
+// Add to your module-info.java
 requires com.aayushatharva.brotli4j;
 requires com.github.luben.zstd_jni;
 ----
 
-You can find an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/compression[example with Brotli] among {VertX} examples.
-
-Alternatively, since those modules are only required at runtime, you can add them with `--add-modules com.aayushatharva.brotli4j,com.github.luben.zstd_jni`.
+You can find an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/main/java/io/vertx/example/jpms/compression[example with Brotli] among {VertX} JPMS examples.
 
 == Logging
 
 Todo.
 
-== Module name reference
+== Modules reference
 
 Here is the list of Vert.x module names
 
