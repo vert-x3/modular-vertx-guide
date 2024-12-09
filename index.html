@@ -561,11 +561,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_event_bus_bridge">Event bus bridge</a></li>
 </ul>
 </li>
-<li><a href="#_java_service_providers">Java service providers</a></li>
 <li><a href="#_native_transports">Native transports</a></li>
 <li><a href="#_openssl">OpenSSL</a></li>
 <li><a href="#_http_compression">HTTP Compression</a></li>
-<li><a href="#_logging">Logging</a></li>
 <li><a href="#_modules_reference">Modules reference</a></li>
 </ul>
 </div>
@@ -644,6 +642,18 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Your application should never require <code>io.vertx.core.logging</code>, this module contains the logging abstraction used by Vert.x for logging purposes and is exclusively used by Vert.x components. Your application should use the logging framework of your choice and configure Vert.x logging to use it.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="_dependencies">Dependencies</h4>
 <div class="paragraph">
@@ -682,7 +692,83 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 <div class="sect2">
 <h3 id="_auth">Auth</h3>
-
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Artifact ID</th>
+<th class="tableblock halign-left valign-top">Module name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-common</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.common</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-htpasswd</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.htpasswd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-abac</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.abac</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-ldap</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.ldap</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-sqlclient</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.sqlclient</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-oauth2</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.oauth2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-htdigest</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.htdigest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-jwt</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.jwt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-properties</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-webauthn4j</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.webauthn4j</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-core-otp</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.core.otp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_dependencies_2">Dependencies</h4>
+<div class="paragraph">
+<p>Transitive dependencies are explicit modules.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_service_resolver">Service Resolver</h3>
@@ -805,14 +891,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="sect1">
-<h2 id="_java_service_providers">Java service providers</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Todo.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_native_transports">Native transports</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -906,14 +984,6 @@ requires com.github.luben.zstd_jni;</code></pre>
 </div>
 <div class="paragraph">
 <p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression">example with Brotli</a> among Vert.x JPMS examples.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_logging">Logging</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Todo.</p>
 </div>
 </div>
 </div>
@@ -1384,7 +1454,7 @@ requires com.github.luben.zstd_jni;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-12-09 13:41:31 UTC
+Last updated 2024-12-09 13:51:48 UTC
 </div>
 </div>
 </body>
