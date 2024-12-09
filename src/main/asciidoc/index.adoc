@@ -38,6 +38,8 @@ Most {VertX} components support level 3 (according to the maturity model) and ex
 |explicit
 |===
 
+CAUTION: Your application should never require `io.vertx.core.logging`, this module contains the logging abstraction used by {VertX} for logging purposes and is exclusively used by {VertX} components. Your application should use the logging framework of your choice and configure {VertX} logging to use it.
+
 ==== Dependencies
 
 Transitive dependencies are explicit modules.
@@ -53,6 +55,58 @@ Optional dependencies are explicit modules.
 - Zstd-jni `com.github.luben:zstd-jni`
 
 === Auth
+
+|===
+|Artifact ID| Module name|Type
+
+|_vertx-auth-common_
+|`io.vertx.auth.common`
+|explicit
+
+|_vertx-auth-htpasswd_
+|`io.vertx.auth.htpasswd`
+|explicit
+
+|_vertx-auth-abac_
+|`io.vertx.auth.abac`
+|explicit
+
+|_vertx-auth-ldap_
+|`io.vertx.auth.ldap`
+|explicit
+
+|_vertx-auth-sqlclient_
+|`io.vertx.auth.sqlclient`
+|explicit
+
+|_vertx-auth-oauth2_
+|`io.vertx.auth.oauth2`
+|explicit
+
+|_vertx-auth-htdigest_
+|`io.vertx.auth.htdigest`
+|explicit
+
+|_vertx-auth-jwt_
+|`io.vertx.auth.jwt`
+|explicit
+
+|_vertx-auth-properties_
+|`io.vertx.auth.properties`
+|explicit
+
+|_vertx-auth-webauthn4j_
+|`io.vertx.auth.webauthn4j`
+|explicit
+
+|_vertx-core-otp_
+|`io.vertx.core.otp`
+|explicit
+|===
+
+==== Dependencies
+
+Transitive dependencies are explicit modules.
 
 === Service Resolver
 
@@ -113,10 +167,6 @@ Optional dependencies are explicit modules.
 === HTTP Proxy
 
 === Event bus bridge
-
-== Java service providers
-
-Todo.
 
 == Native transports
 
@@ -181,10 +231,6 @@ requires com.github.luben.zstd_jni;
 ----
 
 You can find an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression[example with Brotli] among {VertX} JPMS examples.
-
-== Logging
-
-Todo.
 
 == Modules reference
 
