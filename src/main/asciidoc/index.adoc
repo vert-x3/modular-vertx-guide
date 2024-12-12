@@ -204,12 +204,12 @@ Transitive dependencies are explicit modules.
 |_vertx-web-template-freemarker_
 |`io.vertx.web.template.freemarker`
 |explicit
-|named automatic
+|automatic
 
 |_vertx-web-template-thymeleaf_
 |`io.vertx.web.template.thymeleaf`
 |explicit
-|named automatic
+|automatic
 
 |_vertx-web-template-rocker_
 |`io.vertx.web.template.rocker`
@@ -224,7 +224,7 @@ Transitive dependencies are explicit modules.
 |_vertx-web-template-jte_
 |`io.vertx.web.template.jte`
 |explicit
-|named automatic
+|automatic
 
 |_vertx-web-template-httl_
 |n/a
@@ -249,6 +249,38 @@ Transitive dependencies are explicit modules.
 
 === SQL Client
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-sql-client_
+|`io.vertx.sql.client`
+|explicit
+|explicit
+|_vertx-pg-client_
+|`io.vertx.sql.client.pg`
+|explicit
+|explicit
+|_vertx-mssql-client_
+|`io.vertx.sql.client.mssql`
+|explicit
+|explicit
+|_vertx-mysql-client_
+|`io.vertx.sql.client.mysql`
+|explicit
+|explicit
+|_vertx-pg-client_
+|`io.vertx.sql.client.pg`
+|explicit
+|explicit
+|_vertx-oracle-client_
+|`io.vertx.sql.client.oracle`
+|explicit
+|automatic
+|_vertx-jdbc-client_
+|`io.vertx.sql.client.jdbc`
+|explicit
+|depends on the JDBC library
+|===
+
 === Redis Client
 
 |===
@@ -271,6 +303,14 @@ Transitive dependencies are explicit modules.
 
 === Cassandra Client
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-cassandra-client_
+|`io.vertx.client.cassandra`
+|explicit
+|automatic
+|===
+
 === Consul Client
 
 |===
@@ -292,6 +332,14 @@ Transitive dependencies are explicit modules.
 |===
 
 === Mongo Client
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-mongo-client_
+|`io.vertx.mongo.client`
+|explicit
+|automatic
+|===
 
 === Stomp
 
@@ -325,6 +373,49 @@ Transitive dependencies are explicit modules.
 
 === Config
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-config_
+|`io.vertx.config`
+|explicit
+|explicit
+
+|_vertx-config-git_
+|`io.vertx.config.git`
+|explicit
+|automatic
+
+|_vertx-config-hocon_
+|`io.vertx.config.hocon`
+|explicit
+|automatic
+
+|_vertx-config-configmap_
+|`io.vertx.config.configmap`
+|explicit
+|explicit
+
+|_vertx-config-spring_
+|`io.vertx.config.spring`
+|explicit
+|explicit
+
+|_vertx-config-yaml_
+|`io.vertx.config.yaml`
+|explicit
+|explicit
+
+|_vertx-config-consul_
+|`io.vertx.config.consul`
+|explicit
+|explicit
+
+|_vertx-config-redis_
+|`io.vertx.config.redis`
+|explicit
+|explicit
+|===
+
 === Json Schema
 
 |===
@@ -357,23 +448,111 @@ Transitive dependencies are explicit modules.
 
 === gRPC
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-grpc-common_
+|`io.vertx.grpc.common`
+|explicit
+|automatic
+|_vertx-grpc-client_
+|`io.vertx.grpc.client`
+|explicit
+|automatic
+|_vertx-grpc-server_
+|`io.vertx.grpc.server`
+|explicit
+|automatic
+|_vertx-grpcio-common_
+|n/a
+|unsupported
+|n/a
+|_vertx-grpcio-client_
+|n/a
+|unsupported
+|n/a
+|_vertx-grpcio-server_
+|n/a
+|unsupported
+|n/a
+|===
+
+Since Vert.x 5, the Vert.x gRPC stack is split in two
+
+- `vertx-grpc-\*` artifacts providing explicit modules, yet relying on `com.google.protobuf` and `com.google.protobuf.util` named automatic modules
+- `vertx-grpc-io-\*` artifacts which cannot be modular, relying on the non-modular `io.grpc:*` artifacts
+
+Concerning the `com.google.protobuf.*` artifacts, there is a modular version of it in the https://github.com/elide-dev/jpms[JPMS Attic Repository] until
+the Java Protocol Buffers library supports it. Here is an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#grpc-service[example] of a modular gRPC service.
+
 === JUnit 5
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-junit5_
+|`io.vertx.testing.junit5`
+|explicit
+|explicit
+|===
+
+Vert.x examples provide a few simple tests https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/test/java/io/vertx/example/jpms/tests[examples] written with JUnit 5.
 
 === Metrics
 
 ==== Micrometer Metrics
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-micrometer-metrics_
+|`io.vertx.metrics.micrometer`
+|explicit
+|automatic
+|===
+
 ==== Dropwizard Metrics
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-dropwizard-metrics_
+|`io.vertx.metrics.dropwizard`
+|explicit
+|automatic
+|===
 
 === Tracing
 
 ==== Zipkin Tracing
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-zipkin_
+|`io.vertx.tracing.zipkin`
+|explicit
+|automatic
+|===
+
 ==== Open Telemetry Tracing
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-opentelemetry_
+|`io.vertx.tracing.opentelemetry`
+|explicit
+|automatic
+|===
 
 ==== Clustering
 
 ==== Hazelcast Clustering
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-hazelcast_
+|`io.vertx.clustermanager.hazelcast`
+|explicit
+|explicit
+|===
+
+NOTE: multicast join is not supported on the module path on macOS, instead Hazelcast TCP configuration is required
 
 === Service Proxy
 
@@ -386,8 +565,6 @@ Transitive dependencies are explicit modules.
 |explicit
 |explicit
 |===
-
-=== Event bus bridge
 
 == Native transports
 
@@ -453,66 +630,8 @@ requires com.github.luben.zstd_jni;
 
 You can find an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression[example with Brotli] among {VertX} JPMS examples.
 
-== Modules reference
-
-Here is the list of Vert.x module names
-
 * _Codegen_
 ** `io.vertx.codegen.api`
 ** `io.vertx.codegen.json`
-* _Sql Client_
-** `io.vertx.sql.client`
-** `io.vertx.sql.client.pg`
-** `io.vertx.sql.client.mssql`
-** `io.vertx.sql.client.db2`
-** `io.vertx.sql.client.mysql`
-** `io.vertx.sql.client.oracle`
-** `io.vertx.sql.client.jdbc`
 ** `io.vertx.sql.client.templates`
-* _Cassandra Client_
-** `io.vertx.cassandra.client`
-* _Mongo Client_
-** `io.vertx.mongo.client`
-* _gRPC_
-** `io.vertx.grpc.common`
-** `io.vertx.grpc.client`
-** `io.vertx.grpc.server`
-* _JUnit 5_
-** `io.vertx.testing.junit5`
-* _Unit_
-** `io.vertx.testing.unit`
-* _Dropwizard Metrics_
-** `io.vertx.metrics.dropwizard`
-* _Micrometer Metrics_
-** `io.vertx.metrics.micrometer`
-* _Zipkin Tracing_
-** `io.vertx.tracing.zipkin`
-* _Otel Metrics_
-** `io.vertx.tracing.opentelemetry`
-* _Hazelcast Cluster Manager_
-** `io.vertx.clustermanager.hazelcast`
-* _Config_
-* `io.vertx.config`
-* `io.vertx.config.hocon`
-* `io.vertx.config.git`
-* `io.vertx.config.redis`
-* `io.vertx.config.configmap`
-* `io.vertx.config.spring`
-* `io.vertx.config.yaml`
-* `io.vertx.config.consul`
-* _Auth_
-** `io.vertx.auth.common`
-** `io.vertx.auth.htpasswd`
-** `io.vertx.auth.abac`
-** `io.vertx.auth.ldap`
-** `io.vertx.auth.webauthn`
-** `io.vertx.auth.sqlclient`
-** `io.vertx.auth.oauth2`
-** `io.vertx.auth.htdigest`
-** `io.vertx.auth.jwt`
-** `io.vertx.auth.properties`
-** `io.vertx.auth.webauthn4j`
-** `io.vertx.auth.otp`
-* _Event Bus Bridge_
-** `io.vertx.eventbusbridge`
-
+** service proxies...
