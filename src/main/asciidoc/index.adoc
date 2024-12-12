@@ -27,14 +27,16 @@ Most {VertX} components support level 3 (according to the maturity model) and ex
 === Core
 
 |===
-|Artifact ID| Module name|Type
+|Artifact ID| Module name|Type|Dependencies
 
 |_vertx-core_
 |`io.vertx.core`
 |explicit
+|explicit
 
 |_vertx-core-logging_
 |`io.vertx.core.logging`
+|explicit
 |explicit
 |===
 
@@ -57,50 +59,61 @@ Optional dependencies are explicit modules.
 === Auth
 
 |===
-|Artifact ID| Module name|Type
+|Artifact ID| Module name|Type|Dependencies
 
 |_vertx-auth-common_
 |`io.vertx.auth.common`
+|explicit
 |explicit
 
 |_vertx-auth-htpasswd_
 |`io.vertx.auth.htpasswd`
 |explicit
+|explicit
 
 |_vertx-auth-abac_
 |`io.vertx.auth.abac`
+|explicit
 |explicit
 
 |_vertx-auth-ldap_
 |`io.vertx.auth.ldap`
 |explicit
+|explicit
 
 |_vertx-auth-sqlclient_
 |`io.vertx.auth.sqlclient`
+|explicit
 |explicit
 
 |_vertx-auth-oauth2_
 |`io.vertx.auth.oauth2`
 |explicit
+|explicit
 
 |_vertx-auth-htdigest_
 |`io.vertx.auth.htdigest`
+|explicit
 |explicit
 
 |_vertx-auth-jwt_
 |`io.vertx.auth.jwt`
 |explicit
+|explicit
 
 |_vertx-auth-properties_
 |`io.vertx.auth.properties`
+|explicit
 |explicit
 
 |_vertx-auth-webauthn4j_
 |`io.vertx.auth.webauthn4j`
 |explicit
+|explicit
 
 |_vertx-core-otp_
 |`io.vertx.core.otp`
+|explicit
 |explicit
 |===
 
@@ -110,37 +123,237 @@ Transitive dependencies are explicit modules.
 
 === Service Resolver
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-service-resolver_
+|`io.vertx.serviceresolver`
+|explicit
+|explicit
+|===
+
 === URI templates
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-uri-template_
+|`io.vertx.uritemplate`
+|explicit
+|explicit
+|===
+
 === Web
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+
+|_vertx-web-common_
+|`io.vertx.web.common`
+|explicit
+|explicit
+
+|_vertx-web_
+|`io.vertx.web`
+|explicit
+|explicit
+
+|_vertx-web-openapi-router_
+|`io.vertx.web.openapi-router`
+|explicit
+|explicit
+
+|_vertx-web-validation_
+|`io.vertx.web.validation`
+|explicit
+|explicit
+
+|_vertx-web-proxy_
+|`io.vertx.web.proxy`
+|explicit
+|explicit
+
+|_vertx-web-graphql_
+|`io.vertx.web.graphql`
+|explicit
+|named automatic
+
+|_vertx-web-client_
+|`io.vertx.web.client`
+|explicit
+|explicit
+
+|_vertx-web-sstore-redis_
+|`io.vertx.web.sstore.redis`
+|explicit
+|explicit
+
+|_vertx-web-sstore-cookie_
+|`io.vertx.web.sstore.cookie`
+|explicit
+|explicit
+
+|_vertx-web-api-service_
+|`io.vertx.web.apiservice`
+|explicit
+|explicit
+
+|_vertx-web-template-mvel_
+|`io.vertx.web.template.mvel`
+|explicit
+|automatic
+
+|_vertx-web-template-freemarker_
+|`io.vertx.web.template.freemarker`
+|explicit
+|named automatic
+
+|_vertx-web-template-thymeleaf_
+|`io.vertx.web.template.thymeleaf`
+|explicit
+|named automatic
+
+|_vertx-web-template-rocker_
+|`io.vertx.web.template.rocker`
+|explicit
+|automatic
+
+|_vertx-web-template-handlebars_
+|`io.vertx.web.template.handlebars`
+|explicit
+|automatic
+
+|_vertx-web-template-jte_
+|`io.vertx.web.template.jte`
+|explicit
+|named automatic
+
+|_vertx-web-template-httl_
+|n/a
+|unsupported
+|n/a
+
+|_vertx-web-template-pebble_
+|n/a
+|unsupported
+|n/a
+
+|_vertx-web-template-pug_
+|n/a
+|unsupported
+|n/a
+
+|_vertx-web-template-rythm_
+|n/a
+|unsupported
+|n/a
+|===
 
 === SQL Client
 
 === Redis Client
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-redis-client_
+|`io.vertx.redisclient`
+|explicit
+|explicit
+|===
+
 === Mail Client
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-mail-client_
+|`io.vertx.mail.client`
+|explicit
+|explicit
+|===
 
 === Cassandra Client
 
 === Consul Client
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-consul-client_
+|`io.vertx.consul.client`
+|explicit
+|explicit
+|===
+
 === Amqp Client
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-amqp-client_
+|`io.vertx.amqpclient`
+|explicit
+|explicit
+|===
 
 === Mongo Client
 
 === Stomp
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-stomp_
+|`io.vertx.stomp`
+|explicit
+|explicit
+|===
+
 === Circuit Breaker
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-circuit-breaker_
+|`io.vertx.circuitbreaker`
+|explicit
+|explicit
+|===
+
 === Health checks
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-health-checks_
+|`io.vertx.healtcheck`
+|explicit
+|explicit
+|===
 
 === Config
 
 === Json Schema
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-json-schema_
+|`io.vertx.jsonschema`
+|explicit
+|explicit
+|===
+
 === Open API
 
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-open-api_
+|`io.vertx.openapi`
+|explicit
+|explicit
+|===
+
 === MQTT
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-mqtt_
+|`io.vertx.mqtt`
+|explicit
+|explicit
+|===
 
 === gRPC
 
@@ -165,6 +378,14 @@ Transitive dependencies are explicit modules.
 === Service Proxy
 
 === HTTP Proxy
+
+|===
+|Artifact ID| Module name|Type|Dependencies
+|_vertx-http-proxy_
+|`io.vertx.httpproxy`
+|explicit
+|explicit
+|===
 
 === Event bus bridge
 
@@ -239,26 +460,6 @@ Here is the list of Vert.x module names
 * _Codegen_
 ** `io.vertx.codegen.api`
 ** `io.vertx.codegen.json`
-* _Core_
-** `io.vertx.core`
-** `io.vertx.core.logging`
-* _Web_
-** `io.vertx.web`
-** `io.vertx.web.common`
-** `io.vertx.web.openapi.router`
-** `io.vertx.web.validation`
-** `io.vertx.web.proxy`
-** `io.vertx.web.graphql`
-** `io.vertx.web.client`
-** `io.vertx.web.sstore.redis`
-** `io.vertx.web.sstore.cookie`
-** `io.vertx.web.apiservice`
-*** `io.vertx.web.template.mvel`
-*** `io.vertx.web.template.freemarker`
-*** `io.vertx.web.template.thymeleaf`
-*** `io.vertx.web.template.rocker`
-*** `io.vertx.web.template.handlebars`
-*** `io.vertx.web.template.jte`
 * _Sql Client_
 ** `io.vertx.sql.client`
 ** `io.vertx.sql.client.pg`
@@ -268,26 +469,10 @@ Here is the list of Vert.x module names
 ** `io.vertx.sql.client.oracle`
 ** `io.vertx.sql.client.jdbc`
 ** `io.vertx.sql.client.templates`
-* _Redis Client_
-** `io.vertx.redis.client`
-* _Mail Client_
-** `io.vertx.mail.client`
 * _Cassandra Client_
 ** `io.vertx.cassandra.client`
-* _Consul Client_
-** `io.vertx.consul.client`
-* _Amqp Client_
-** `io.vertx.amqp.client`
 * _Mongo Client_
 ** `io.vertx.mongo.client`
-* _Stomp_
-** `io.vertx.stomp`
-* _Circuit Breaker_
-** `io.vertx.circuitbreaker`
-* _Uri Template_
-** `io.vertx.uritemplate`
-* _MQTT_
-** `io.vertx.mqtt`
 * _gRPC_
 ** `io.vertx.grpc.common`
 ** `io.vertx.grpc.client`
@@ -315,10 +500,6 @@ Here is the list of Vert.x module names
 * `io.vertx.config.spring`
 * `io.vertx.config.yaml`
 * `io.vertx.config.consul`
-* _Proton_
-** `io.vertx.proton`
-* _Open API_
-** `io.vertx.openapi`
 * _Auth_
 ** `io.vertx.auth.common`
 ** `io.vertx.auth.htpasswd`
@@ -332,16 +513,6 @@ Here is the list of Vert.x module names
 ** `io.vertx.auth.properties`
 ** `io.vertx.auth.webauthn4j`
 ** `io.vertx.auth.otp`
-* _Service Proxy_
-** `io.vertx.serviceproxy`
-* _HTTP Proxy_
-** `io.vertx.httpproxy`
-* _Service Resolver_
-** `io.vertx.serviceresolver`
-* _Health checks_
-** `io.vertx.healthcheck`
-* _Json Schema_
-** `io.vertx.jsonschema`
 * _Event Bus Bridge_
 ** `io.vertx.eventbusbridge`
 
