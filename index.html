@@ -556,13 +556,17 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_junit_5">JUnit 5</a></li>
 <li><a href="#_metrics">Metrics</a></li>
 <li><a href="#_tracing">Tracing</a></li>
-<li><a href="#_service_proxy">Service Proxy</a></li>
 <li><a href="#_http_proxy">HTTP Proxy</a></li>
 </ul>
 </li>
 <li><a href="#_native_transports">Native transports</a></li>
 <li><a href="#_openssl">OpenSSL</a></li>
 <li><a href="#_http_compression">HTTP Compression</a></li>
+<li><a href="#_code_generation">Code generation</a>
+<ul class="sectlevel2">
+<li><a href="#_service_proxy_generation">Service proxy generation</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1652,10 +1656,6 @@ multicast join is not supported on the module path on macOS, instead Hazelcast T
 </div>
 </div>
 <div class="sect2">
-<h3 id="_service_proxy">Service Proxy</h3>
-
-</div>
-<div class="sect2">
 <h3 id="_http_proxy">HTTP Proxy</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1777,35 +1777,85 @@ requires com.github.luben.zstd_jni;</code></pre>
 <div class="paragraph">
 <p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression">example with Brotli</a> among Vert.x JPMS examples.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_code_generation">Code generation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Code generation of a modular application is supported.</p>
+</div>
+<div class="paragraph">
+<p>The following module are available for applications:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-codegen-api</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.codegen.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Codegen annotations, e.g. <code>io.vertx.codegen.annotations.DataObject</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-codegen-json</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.codegen.json</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON generator API, e.g. <code>io.vertx.codegen.json.JsonGen</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Your application requires these components on the module path.</p>
+</div>
+<div class="paragraph">
+<p>The Vert.x 4 <code>vertx-codegen</code> component has been split between</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><em>Codegen</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>io.vertx.codegen.api</code></p>
+<p><code>vertx-codegen-processor</code> contains the annotation processor only necessary to the Java compiler</p>
 </li>
 <li>
-<p><code>io.vertx.codegen.json</code></p>
+<p><code>vertx-codegen-api</code> contains the annotations</p>
 </li>
 <li>
-<p><code>io.vertx.sql.client.templates</code></p>
-</li>
-<li>
-<p>service proxies&#8230;&#8203;</p>
+<p><code>vertx-codegen-json</code> contains the json generator</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p><code>vertx-codegen</code> still exists for backward compatibility purpose, feel free to use it or use finer grained dependencies.</p>
+</div>
+<div class="sect2">
+<h3 id="_service_proxy_generation">Service proxy generation</h3>
+<div class="paragraph">
+<p>Here is the bare minimum required by your module to generate a service proxy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Service proxy</span>
+requires <span class="directive">static</span> io.vertx.codegen.api;
+requires <span class="directive">static</span> io.vertx.codegen.json;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find the <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#service-proxy">service proxy example</a> among our set of examples.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-12-12 09:52:22 UTC
+Last updated 2024-12-12 15:16:52 UTC
 </div>
 </div>
 </body>
