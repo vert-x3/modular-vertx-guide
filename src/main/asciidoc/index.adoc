@@ -666,3 +666,7 @@ requires static io.vertx.codegen.json;
 ----
 
 You can find the https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#service-proxy[service proxy example] among our set of examples.
+
+=== Sql Client Template generation
+
+Todo (needs https://github.com/vert-x3/vertx-examples/pull/474/files)
