@@ -554,8 +554,6 @@ Vert.x examples provide a few simple tests https://github.com/vert-x3/vertx-exam
 
 NOTE: multicast join is not supported on the module path on macOS, instead Hazelcast TCP configuration is required
 
-=== Service Proxy
-
 === HTTP Proxy
 
 |===
@@ -630,8 +628,41 @@ requires com.github.luben.zstd_jni;
 
 You can find an https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression[example with Brotli] among {VertX} JPMS examples.
 
-* _Codegen_
-** `io.vertx.codegen.api`
-** `io.vertx.codegen.json`
-** `io.vertx.sql.client.templates`
-** service proxies...
+== Code generation
+
+Code generation of a modular application is supported.
+
+The following module are available for applications:
+
+|===
+|Artifact ID|Module name|Role
+|_vertx-codegen-api_
+|`io.vertx.codegen.api`
+|Codegen annotations, e.g. `io.vertx.codegen.annotations.DataObject`
+|_vertx-codegen-json_
+|`io.vertx.codegen.json`
+|JSON generator API, e.g. `io.vertx.codegen.json.JsonGen`
+|===
+
+Your application requires these components on the module path.
+
+The {VertX} 4 `vertx-codegen` component has been split between
+
+- `vertx-codegen-processor` contains the annotation processor only necessary to the Java compiler
+- `vertx-codegen-api` contains the annotations
+- `vertx-codegen-json` contains the json generator
+
+`vertx-codegen` still exists for backward compatibility purpose, feel free to use it or use finer grained dependencies.
+
+=== Service proxy generation
+
+Here is the bare minimum required by your module to generate a service proxy.
+
+[source,java]
+----
+// Service proxy
+requires static io.vertx.codegen.api;
+requires static io.vertx.codegen.json;
+----
+
+You can find the https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#service-proxy[service proxy example] among our set of examples.
