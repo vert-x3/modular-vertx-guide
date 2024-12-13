@@ -621,16 +621,14 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h3 id="_core">Core</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Artifact ID</th>
 <th class="tableblock halign-left valign-top">Module name</th>
-<th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Dependencies</th>
 </tr>
 </thead>
@@ -639,12 +637,10 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-core</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.core</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-core-logging</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.core.logging</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -701,16 +697,14 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_auth">Auth</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Artifact ID</th>
 <th class="tableblock halign-left valign-top">Module name</th>
-<th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Dependencies</th>
 </tr>
 </thead>
@@ -719,66 +713,55 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-common</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.common</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-htpasswd</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.htpasswd</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-abac</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.abac</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-ldap</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.ldap</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-sqlclient</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.sqlclient</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-oauth2</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.oauth2</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-htdigest</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.htdigest</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-jwt</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.jwt</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-properties</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.properties</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-auth-webauthn4j</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.auth.webauthn4j</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-core-otp</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.core.otp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -794,22 +777,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_service_resolver">Service Resolver</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-service-resolver</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.serviceresolver</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -819,22 +799,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_uri_templates">URI templates</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-uri-template</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.uritemplate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -844,16 +821,14 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_web">Web</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Artifact ID</th>
 <th class="tableblock halign-left valign-top">Module name</th>
-<th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Dependencies</th>
 </tr>
 </thead>
@@ -862,181 +837,151 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-common</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.common</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-openapi-router</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.openapi-router</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-validation</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.validation</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-proxy</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.proxy</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-graphql</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.graphql</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">named automatic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.client</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-sstore-redis</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.sstore.redis</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-sstore-cookie</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.sstore.cookie</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-api-service</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.apiservice</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-mvel</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.template.mvel</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-freemarker</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.template.freemarker</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-thymeleaf</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.template.thymeleaf</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-rocker</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.template.rocker</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-handlebars</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.template.handlebars</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-jte</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.web.template.jte</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-httl</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsupported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-pebble</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsupported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-pug</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsupported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-web-template-rythm</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsupported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The following template engine do not support modularity at the moment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>vertx-web-template-httl</em></p>
+</li>
+<li>
+<p><em>vertx-web-template-pebble</em></p>
+</li>
+<li>
+<p><em>vertx-web-template-pug</em></p>
+</li>
+<li>
+<p><em>vertx-web-template-rythm</em></p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_sql_client">SQL Client</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-sql-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.sql.client</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-pg-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.sql.client.pg</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-mssql-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.sql.client.mssql</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-mysql-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.sql.client.mysql</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-pg-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.sql.client.pg</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-oracle-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.sql.client.oracle</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-jdbc-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.sql.client.jdbc</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">depends on the JDBC library</p></td>
 </tr>
 </tbody>
@@ -1046,22 +991,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_redis_client">Redis Client</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-redis-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.redisclient</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1071,22 +1013,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_mail_client">Mail Client</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-mail-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.mail.client</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1096,22 +1035,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_cassandra_client">Cassandra Client</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-cassandra-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.client.cassandra</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 </tbody>
@@ -1121,22 +1057,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_consul_client">Consul Client</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-consul-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.consul.client</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1146,22 +1079,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_amqp_client">Amqp Client</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-amqp-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.amqpclient</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1171,22 +1101,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_mongo_client">Mongo Client</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-mongo-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.mongo.client</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 </tbody>
@@ -1196,22 +1123,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_stomp">Stomp</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-stomp</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.stomp</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1221,22 +1145,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_circuit_breaker">Circuit Breaker</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-circuit-breaker</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.circuitbreaker</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1246,22 +1167,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_health_checks">Health checks</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-health-checks</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.healtcheck</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1271,64 +1189,54 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_config">Config</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config-git</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config.git</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config-hocon</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config.hocon</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config-configmap</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config.configmap</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config-spring</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config.spring</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config-yaml</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config.yaml</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config-consul</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config.consul</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-config-redis</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.config.redis</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1338,22 +1246,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_json_schema">Json Schema</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-json-schema</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.jsonschema</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1363,22 +1268,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_open_api">Open API</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-open-api</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.openapi</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1388,22 +1290,19 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_mqtt">MQTT</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-mqtt</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.mqtt</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1413,56 +1312,49 @@ Your application should never require <code>io.vertx.core.logging</code>, this m
 <h3 id="_grpc">gRPC</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-grpc-common</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.grpc.common</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-grpc-client</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.grpc.client</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-grpc-server</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.grpc.server</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-grpcio-common</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsupported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-grpcio-client</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsupported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-grpcio-server</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unsupported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The following modules do not support modularity:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>vertx-grpcio-common</em></p>
+</li>
+<li>
+<p><em>vertx-grpcio-client</em></p>
+</li>
+<li>
+<p><em>vertx-grpcio-server</em></p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>Since Vert.x 5, the Vert.x gRPC stack is split in two</p>
 </div>
@@ -1485,22 +1377,19 @@ the Java Protocol Buffers library supports it. Here is an <a href="https://githu
 <h3 id="_junit_5">JUnit 5</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-junit5</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.testing.junit5</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1515,22 +1404,19 @@ the Java Protocol Buffers library supports it. Here is an <a href="https://githu
 <h4 id="_micrometer_metrics">Micrometer Metrics</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-micrometer-metrics</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.metrics.micrometer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 </tbody>
@@ -1540,22 +1426,19 @@ the Java Protocol Buffers library supports it. Here is an <a href="https://githu
 <h4 id="_dropwizard_metrics">Dropwizard Metrics</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-dropwizard-metrics</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.metrics.dropwizard</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 </tbody>
@@ -1568,22 +1451,19 @@ the Java Protocol Buffers library supports it. Here is an <a href="https://githu
 <h4 id="_zipkin_tracing">Zipkin Tracing</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-zipkin</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.tracing.zipkin</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 </tbody>
@@ -1593,22 +1473,19 @@ the Java Protocol Buffers library supports it. Here is an <a href="https://githu
 <h4 id="_open_telemetry_tracing">Open Telemetry Tracing</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-opentelemetry</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.tracing.opentelemetry</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">automatic</p></td>
 </tr>
 </tbody>
@@ -1622,22 +1499,19 @@ the Java Protocol Buffers library supports it. Here is an <a href="https://githu
 <h4 id="_hazelcast_clustering">Hazelcast Clustering</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-hazelcast</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.clustermanager.hazelcast</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1660,22 +1534,19 @@ multicast join is not supported on the module path on macOS, instead Hazelcast T
 <h3 id="_http_proxy">HTTP Proxy</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-http-proxy</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.httpproxy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">explicit</p></td>
 </tr>
 </tbody>
@@ -1799,7 +1670,7 @@ requires com.github.luben.zstd_jni;</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-codegen-api</em></p></td>
@@ -1862,7 +1733,7 @@ requires <span class="directive">static</span> io.vertx.codegen.json;</code></pr
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-12-13 05:02:22 UTC
+Last updated 2024-12-13 08:25:57 UTC
 </div>
 </div>
 </body>
