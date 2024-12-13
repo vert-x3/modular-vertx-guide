@@ -27,16 +27,14 @@ Most {VertX} components support level 3 (according to the maturity model) and ex
 === Core
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 
 |_vertx-core_
 |`io.vertx.core`
 |explicit
-|explicit
 
 |_vertx-core-logging_
 |`io.vertx.core.logging`
-|explicit
 |explicit
 |===
 
@@ -59,61 +57,50 @@ Optional dependencies are explicit modules.
 === Auth
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 
 |_vertx-auth-common_
 |`io.vertx.auth.common`
-|explicit
 |explicit
 
 |_vertx-auth-htpasswd_
 |`io.vertx.auth.htpasswd`
 |explicit
-|explicit
 
 |_vertx-auth-abac_
 |`io.vertx.auth.abac`
-|explicit
 |explicit
 
 |_vertx-auth-ldap_
 |`io.vertx.auth.ldap`
 |explicit
-|explicit
 
 |_vertx-auth-sqlclient_
 |`io.vertx.auth.sqlclient`
-|explicit
 |explicit
 
 |_vertx-auth-oauth2_
 |`io.vertx.auth.oauth2`
 |explicit
-|explicit
 
 |_vertx-auth-htdigest_
 |`io.vertx.auth.htdigest`
-|explicit
 |explicit
 
 |_vertx-auth-jwt_
 |`io.vertx.auth.jwt`
 |explicit
-|explicit
 
 |_vertx-auth-properties_
 |`io.vertx.auth.properties`
-|explicit
 |explicit
 
 |_vertx-auth-webauthn4j_
 |`io.vertx.auth.webauthn4j`
 |explicit
-|explicit
 
 |_vertx-core-otp_
 |`io.vertx.core.otp`
-|explicit
 |explicit
 |===
 
@@ -124,359 +111,292 @@ Transitive dependencies are explicit modules.
 === Service Resolver
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-service-resolver_
 |`io.vertx.serviceresolver`
-|explicit
 |explicit
 |===
 
 === URI templates
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-uri-template_
 |`io.vertx.uritemplate`
-|explicit
 |explicit
 |===
 
 === Web
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 
 |_vertx-web-common_
 |`io.vertx.web.common`
-|explicit
 |explicit
 
 |_vertx-web_
 |`io.vertx.web`
 |explicit
-|explicit
 
 |_vertx-web-openapi-router_
 |`io.vertx.web.openapi-router`
-|explicit
 |explicit
 
 |_vertx-web-validation_
 |`io.vertx.web.validation`
 |explicit
-|explicit
 
 |_vertx-web-proxy_
 |`io.vertx.web.proxy`
 |explicit
-|explicit
 
 |_vertx-web-graphql_
 |`io.vertx.web.graphql`
-|explicit
-|named automatic
+|automatic
 
 |_vertx-web-client_
 |`io.vertx.web.client`
-|explicit
 |explicit
 
 |_vertx-web-sstore-redis_
 |`io.vertx.web.sstore.redis`
 |explicit
-|explicit
 
 |_vertx-web-sstore-cookie_
 |`io.vertx.web.sstore.cookie`
-|explicit
 |explicit
 
 |_vertx-web-api-service_
 |`io.vertx.web.apiservice`
 |explicit
-|explicit
 
 |_vertx-web-template-mvel_
 |`io.vertx.web.template.mvel`
-|explicit
 |automatic
 
 |_vertx-web-template-freemarker_
 |`io.vertx.web.template.freemarker`
-|explicit
 |automatic
 
 |_vertx-web-template-thymeleaf_
 |`io.vertx.web.template.thymeleaf`
-|explicit
 |automatic
 
 |_vertx-web-template-rocker_
 |`io.vertx.web.template.rocker`
-|explicit
 |automatic
 
 |_vertx-web-template-handlebars_
 |`io.vertx.web.template.handlebars`
-|explicit
 |automatic
 
 |_vertx-web-template-jte_
 |`io.vertx.web.template.jte`
-|explicit
 |automatic
-
-|_vertx-web-template-httl_
-|n/a
-|unsupported
-|n/a
-
-|_vertx-web-template-pebble_
-|n/a
-|unsupported
-|n/a
-
-|_vertx-web-template-pug_
-|n/a
-|unsupported
-|n/a
-
-|_vertx-web-template-rythm_
-|n/a
-|unsupported
-|n/a
 |===
+
+The following template engine do not support modularity at the moment:
+
+- _vertx-web-template-httl_
+- _vertx-web-template-pebble_
+- _vertx-web-template-pug_
+- _vertx-web-template-rythm_
 
 === SQL Client
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-sql-client_
 |`io.vertx.sql.client`
 |explicit
-|explicit
 |_vertx-pg-client_
 |`io.vertx.sql.client.pg`
-|explicit
 |explicit
 |_vertx-mssql-client_
 |`io.vertx.sql.client.mssql`
 |explicit
-|explicit
 |_vertx-mysql-client_
 |`io.vertx.sql.client.mysql`
-|explicit
 |explicit
 |_vertx-pg-client_
 |`io.vertx.sql.client.pg`
 |explicit
-|explicit
 |_vertx-oracle-client_
 |`io.vertx.sql.client.oracle`
-|explicit
 |automatic
 |_vertx-jdbc-client_
 |`io.vertx.sql.client.jdbc`
-|explicit
 |depends on the JDBC library
 |===
 
 === Redis Client
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-redis-client_
 |`io.vertx.redisclient`
-|explicit
 |explicit
 |===
 
 === Mail Client
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-mail-client_
 |`io.vertx.mail.client`
-|explicit
 |explicit
 |===
 
 === Cassandra Client
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-cassandra-client_
 |`io.vertx.client.cassandra`
-|explicit
 |automatic
 |===
 
 === Consul Client
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-consul-client_
 |`io.vertx.consul.client`
-|explicit
 |explicit
 |===
 
 === Amqp Client
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-amqp-client_
 |`io.vertx.amqpclient`
-|explicit
 |explicit
 |===
 
 === Mongo Client
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-mongo-client_
 |`io.vertx.mongo.client`
-|explicit
 |automatic
 |===
 
 === Stomp
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-stomp_
 |`io.vertx.stomp`
-|explicit
 |explicit
 |===
 
 === Circuit Breaker
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-circuit-breaker_
 |`io.vertx.circuitbreaker`
-|explicit
 |explicit
 |===
 
 === Health checks
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-health-checks_
 |`io.vertx.healtcheck`
-|explicit
 |explicit
 |===
 
 === Config
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-config_
 |`io.vertx.config`
-|explicit
 |explicit
 
 |_vertx-config-git_
 |`io.vertx.config.git`
-|explicit
 |automatic
 
 |_vertx-config-hocon_
 |`io.vertx.config.hocon`
-|explicit
 |automatic
 
 |_vertx-config-configmap_
 |`io.vertx.config.configmap`
 |explicit
-|explicit
 
 |_vertx-config-spring_
 |`io.vertx.config.spring`
-|explicit
 |explicit
 
 |_vertx-config-yaml_
 |`io.vertx.config.yaml`
 |explicit
-|explicit
 
 |_vertx-config-consul_
 |`io.vertx.config.consul`
 |explicit
-|explicit
 
 |_vertx-config-redis_
 |`io.vertx.config.redis`
-|explicit
 |explicit
 |===
 
 === Json Schema
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-json-schema_
 |`io.vertx.jsonschema`
-|explicit
 |explicit
 |===
 
 === Open API
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-open-api_
 |`io.vertx.openapi`
-|explicit
 |explicit
 |===
 
 === MQTT
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-mqtt_
 |`io.vertx.mqtt`
-|explicit
 |explicit
 |===
 
 === gRPC
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-grpc-common_
 |`io.vertx.grpc.common`
-|explicit
 |automatic
 |_vertx-grpc-client_
 |`io.vertx.grpc.client`
-|explicit
 |automatic
 |_vertx-grpc-server_
 |`io.vertx.grpc.server`
-|explicit
 |automatic
-|_vertx-grpcio-common_
-|n/a
-|unsupported
-|n/a
-|_vertx-grpcio-client_
-|n/a
-|unsupported
-|n/a
-|_vertx-grpcio-server_
-|n/a
-|unsupported
-|n/a
 |===
 
-Since Vert.x 5, the Vert.x gRPC stack is split in two
+The following modules do not support modularity:
+
+- _vertx-grpcio-common_
+- _vertx-grpcio-client_
+- _vertx-grpcio-server_
+
+Since {VertX5}, the {Vertx} gRPC stack is split in two
 
 - `vertx-grpc-\*` artifacts providing explicit modules, yet relying on `com.google.protobuf` and `com.google.protobuf.util` named automatic modules
 - `vertx-grpc-io-\*` artifacts which cannot be modular, relying on the non-modular `io.grpc:*` artifacts
@@ -487,34 +407,31 @@ the Java Protocol Buffers library supports it. Here is an https://github.com/ver
 === JUnit 5
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-junit5_
 |`io.vertx.testing.junit5`
 |explicit
-|explicit
 |===
 
-Vert.x examples provide a few simple tests https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/test/java/io/vertx/example/jpms/tests[examples] written with JUnit 5.
+{VertX} examples provide a few simple tests https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples/src/test/java/io/vertx/example/jpms/tests[examples] written with JUnit 5.
 
 === Metrics
 
 ==== Micrometer Metrics
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-micrometer-metrics_
 |`io.vertx.metrics.micrometer`
-|explicit
 |automatic
 |===
 
 ==== Dropwizard Metrics
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-dropwizard-metrics_
 |`io.vertx.metrics.dropwizard`
-|explicit
 |automatic
 |===
 
@@ -523,20 +440,18 @@ Vert.x examples provide a few simple tests https://github.com/vert-x3/vertx-exam
 ==== Zipkin Tracing
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-zipkin_
 |`io.vertx.tracing.zipkin`
-|explicit
 |automatic
 |===
 
 ==== Open Telemetry Tracing
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-opentelemetry_
 |`io.vertx.tracing.opentelemetry`
-|explicit
 |automatic
 |===
 
@@ -545,10 +460,9 @@ Vert.x examples provide a few simple tests https://github.com/vert-x3/vertx-exam
 ==== Hazelcast Clustering
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-hazelcast_
 |`io.vertx.clustermanager.hazelcast`
-|explicit
 |explicit
 |===
 
@@ -557,10 +471,9 @@ NOTE: multicast join is not supported on the module path on macOS, instead Hazel
 === HTTP Proxy
 
 |===
-|Artifact ID| Module name|Type|Dependencies
+|Artifact ID| Module name|Dependencies
 |_vertx-http-proxy_
 |`io.vertx.httpproxy`
-|explicit
 |explicit
 |===
 
@@ -635,7 +548,7 @@ Code generation of a modular application is supported.
 The following module are available for applications:
 
 |===
-|Artifact ID|Module name|Role
+|Artifact ID|Module name|Description
 |_vertx-codegen-api_
 |`io.vertx.codegen.api`
 |Codegen annotations, e.g. `io.vertx.codegen.annotations.DataObject`
