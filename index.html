@@ -531,6 +531,15 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel1">
 <li><a href="#_definitions">Definitions</a></li>
 <li><a href="#_maturity_model">Maturity model</a></li>
+<li><a href="#_native_transports">Native transports</a></li>
+<li><a href="#_openssl">OpenSSL</a></li>
+<li><a href="#_http_compression">HTTP Compression</a></li>
+<li><a href="#_code_generation">Code generation</a>
+<ul class="sectlevel2">
+<li><a href="#_service_proxy_generation">Service proxy generation</a></li>
+<li><a href="#_sql_client_template_generation">Sql Client Template generation</a></li>
+</ul>
+</li>
 <li><a href="#_components">Components</a>
 <ul class="sectlevel2">
 <li><a href="#_core">Core</a></li>
@@ -557,15 +566,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_metrics">Metrics</a></li>
 <li><a href="#_tracing">Tracing</a></li>
 <li><a href="#_http_proxy">HTTP Proxy</a></li>
-</ul>
-</li>
-<li><a href="#_native_transports">Native transports</a></li>
-<li><a href="#_openssl">OpenSSL</a></li>
-<li><a href="#_http_compression">HTTP Compression</a></li>
-<li><a href="#_code_generation">Code generation</a>
-<ul class="sectlevel2">
-<li><a href="#_service_proxy_generation">Service proxy generation</a></li>
-<li><a href="#_sql_client_template_generation">Sql Client Template generation</a></li>
 </ul>
 </li>
 </ul>
@@ -611,6 +611,182 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 <div class="paragraph">
 <p>Most Vert.x components support level 3 (according to the maturity model) and explicit modules, however a few modules have been left aside, due to constraints preventing proper modularity to happen, often due to a faulty dependency, e.g. a split package.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_native_transports">Native transports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Native transports are supported.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.transport.classes.${native.detected.transport}</code> is required as it contains the transport classes.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.transport.${native.transport}.${os.name}.${os.detected.arch}</code> contains the native library and its presence is only required at runtime.</p>
+</div>
+<div class="paragraph">
+<p>You can add them to the JVM launch command with <code>--add-modules --add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime, however this binds your module to a specific os/architecture:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to module-info.java</span>
+requires io.netty.transport.classes.kqueue;
+requires io.netty.transport.kqueue.osx.aarch_64;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#native-transports">example with OpenSSL</a> among Vert.x JPMS examples.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_openssl">OpenSSL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenSSL is supported.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.tcnative.classes.openssl</code> is required as it contains the OpenSSL Netty classes.</p>
+</div>
+<div class="paragraph">
+<p>The module <code>io.netty.internal.tcnative.openssl.${os.detected.name}.${os.detected.arch}</code> contains the native library and its presence is only required at runtime.</p>
+</div>
+<div class="paragraph">
+<p>You can add them to the JVM launch command with <code>--add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime, however this binds your module to a specific os/architecture:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to your module-info.java</span>
+requires io.netty.tcnative.classes.openssl;
+requires io.netty.internal.tcnative.openssl.osx.aarch_64;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#open-ssl">example with OpenSSL</a> among Vert.x JPMS examples.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_http_compression">HTTP Compression</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vert.x supports <em>gzip</em> and <em>deflate</em> algorithms out of the box, however <em>brotli</em> and <em>zstd</em> algorithms requires you to respectively add the following dependencies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Brotli: <code>com.aayushatharva.brotli4j:brotli4j</code></p>
+</li>
+<li>
+<p>Zstd: <code>com.github.luben:zstd-jni</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These dependencies are optional since not everyone need them and when used, they are required at runtime instead of compile time.</p>
+</div>
+<div class="paragraph">
+<p>You can add them to the JVM launch command with <code>--add-modules com.aayushatharva.brotli4j,com.github.luben.zstd_jni</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to your module-info.java</span>
+requires com.aayushatharva.brotli4j;
+requires com.github.luben.zstd_jni;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression">example with Brotli</a> among Vert.x JPMS examples.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_code_generation">Code generation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Code generation of a modular application is supported.</p>
+</div>
+<div class="paragraph">
+<p>The following module are available for applications:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-codegen-api</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.codegen.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Codegen annotations, e.g. <code>io.vertx.codegen.annotations.DataObject</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-codegen-json</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.codegen.json</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON generator API, e.g. <code>io.vertx.codegen.json.JsonGen</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Your application requires these components on the module path.</p>
+</div>
+<div class="paragraph">
+<p>The Vert.x 4 <code>vertx-codegen</code> component has been split between</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>vertx-codegen-processor</code> contains the annotation processor only necessary to the Java compiler</p>
+</li>
+<li>
+<p><code>vertx-codegen-api</code> contains the annotations</p>
+</li>
+<li>
+<p><code>vertx-codegen-json</code> contains the json generator</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>vertx-codegen</code> still exists for backward compatibility purpose, feel free to use it or use finer grained dependencies.</p>
+</div>
+<div class="sect2">
+<h3 id="_service_proxy_generation">Service proxy generation</h3>
+<div class="paragraph">
+<p>Here is the bare minimum required by your module to generate a service proxy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Service proxy</span>
+requires <span class="directive">static</span> io.vertx.codegen.api;
+requires <span class="directive">static</span> io.vertx.codegen.json;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find the <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#service-proxy">service proxy example</a> among our set of examples.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sql_client_template_generation">Sql Client Template generation</h3>
+<div class="paragraph">
+<p>Todo (needs <a href="https://github.com/vert-x3/vertx-examples/pull/474/files" class="bare">https://github.com/vert-x3/vertx-examples/pull/474/files</a>)</p>
+</div>
 </div>
 </div>
 </div>
@@ -1554,186 +1730,10 @@ multicast join is not supported on the module path on macOS, instead Hazelcast T
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_native_transports">Native transports</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Native transports are supported.</p>
-</div>
-<div class="paragraph">
-<p>The module <code>io.netty.transport.classes.${native.detected.transport}</code> is required as it contains the transport classes.</p>
-</div>
-<div class="paragraph">
-<p>The module <code>io.netty.transport.${native.transport}.${os.name}.${os.detected.arch}</code> contains the native library and its presence is only required at runtime.</p>
-</div>
-<div class="paragraph">
-<p>You can add them to the JVM launch command with <code>--add-modules --add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}</code>.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime, however this binds your module to a specific os/architecture:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to module-info.java</span>
-requires io.netty.transport.classes.kqueue;
-requires io.netty.transport.kqueue.osx.aarch_64;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#native-transports">example with OpenSSL</a> among Vert.x JPMS examples.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_openssl">OpenSSL</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>OpenSSL is supported.</p>
-</div>
-<div class="paragraph">
-<p>The module <code>io.netty.tcnative.classes.openssl</code> is required as it contains the OpenSSL Netty classes.</p>
-</div>
-<div class="paragraph">
-<p>The module <code>io.netty.internal.tcnative.openssl.${os.detected.name}.${os.detected.arch}</code> contains the native library and its presence is only required at runtime.</p>
-</div>
-<div class="paragraph">
-<p>You can add them to the JVM launch command with <code>--add-modules io.netty.transport.classes.${native.transport},io.netty.transport.${native.transport}.${os.detected.name}.${os.detected.arch}</code>.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime, however this binds your module to a specific os/architecture:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to your module-info.java</span>
-requires io.netty.tcnative.classes.openssl;
-requires io.netty.internal.tcnative.openssl.osx.aarch_64;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#open-ssl">example with OpenSSL</a> among Vert.x JPMS examples.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_http_compression">HTTP Compression</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Vert.x supports <em>gzip</em> and <em>deflate</em> algorithms out of the box, however <em>brotli</em> and <em>zstd</em> algorithms requires you to respectively add the following dependencies:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Brotli: <code>com.aayushatharva.brotli4j:brotli4j</code></p>
-</li>
-<li>
-<p>Zstd: <code>com.github.luben:zstd-jni</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These dependencies are optional since not everyone need them and when used, they are required at runtime instead of compile time.</p>
-</div>
-<div class="paragraph">
-<p>You can add them to the JVM launch command with <code>--add-modules com.aayushatharva.brotli4j,com.github.luben.zstd_jni</code>.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to your module-info.java</span>
-requires com.aayushatharva.brotli4j;
-requires com.github.luben.zstd_jni;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can find an <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#http-compression">example with Brotli</a> among Vert.x JPMS examples.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_code_generation">Code generation</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Code generation of a modular application is supported.</p>
-</div>
-<div class="paragraph">
-<p>The following module are available for applications:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Artifact ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Module name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-codegen-api</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.codegen.api</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Codegen annotations, e.g. <code>io.vertx.codegen.annotations.DataObject</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>vertx-codegen-json</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.vertx.codegen.json</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JSON generator API, e.g. <code>io.vertx.codegen.json.JsonGen</code></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Your application requires these components on the module path.</p>
-</div>
-<div class="paragraph">
-<p>The Vert.x 4 <code>vertx-codegen</code> component has been split between</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>vertx-codegen-processor</code> contains the annotation processor only necessary to the Java compiler</p>
-</li>
-<li>
-<p><code>vertx-codegen-api</code> contains the annotations</p>
-</li>
-<li>
-<p><code>vertx-codegen-json</code> contains the json generator</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><code>vertx-codegen</code> still exists for backward compatibility purpose, feel free to use it or use finer grained dependencies.</p>
-</div>
-<div class="sect2">
-<h3 id="_service_proxy_generation">Service proxy generation</h3>
-<div class="paragraph">
-<p>Here is the bare minimum required by your module to generate a service proxy.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Service proxy</span>
-requires <span class="directive">static</span> io.vertx.codegen.api;
-requires <span class="directive">static</span> io.vertx.codegen.json;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can find the <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#service-proxy">service proxy example</a> among our set of examples.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_sql_client_template_generation">Sql Client Template generation</h3>
-<div class="paragraph">
-<p>Todo (needs <a href="https://github.com/vert-x3/vertx-examples/pull/474/files" class="bare">https://github.com/vert-x3/vertx-examples/pull/474/files</a>)</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-12-17 05:02:17 UTC
+Last updated 2024-12-17 15:03:25 UTC
 </div>
 </div>
 </body>
