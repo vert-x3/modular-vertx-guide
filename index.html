@@ -785,7 +785,17 @@ requires <span class="directive">static</span> io.vertx.codegen.json;</code></pr
 <div class="sect2">
 <h3 id="_sql_client_template_generation">Sql Client Template generation</h3>
 <div class="paragraph">
-<p>Todo (needs <a href="https://github.com/vert-x3/vertx-examples/pull/474/files" class="bare">https://github.com/vert-x3/vertx-examples/pull/474/files</a>)</p>
+<p>Here is the bare minimum required by your module to generate a Sql Client Template.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">requires <span class="directive">static</span> io.vertx.codegen.api;
+requires io.vertx.sql.client;
+requires io.vertx.sql.client.templates;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find the <a href="https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#sql-client-template">Sql Client Template</a> among our set of examples.</p>
 </div>
 </div>
 </div>
@@ -1788,7 +1798,7 @@ multicast join is not supported on the module path on macOS, instead Hazelcast T
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-06-19 10:03:37 UTC
+Last updated 2025-06-19 10:55:50 UTC
 </div>
 </div>
 </body>
