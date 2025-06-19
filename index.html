@@ -1597,6 +1597,61 @@ the Java Protocol Buffers library supports it. Here is an <a href="https://githu
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Vert.x Micrometer Metrics supports different backend registries.
+It requires you to add one of the following dependencies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Prometheus: <code>io.micrometer:micrometer-registry-prometheus</code></p>
+</li>
+<li>
+<p>InfluxDB: <code>io.micrometer:micrometer-registry-influx</code></p>
+</li>
+<li>
+<p>JMX: <code>io.micrometer:micrometer-registry-jmx</code></p>
+</li>
+<li>
+<p>Graphite: <code>io.micrometer:micrometer-registry-graphite</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These dependencies are optional since not everyone need them and when used, they are required at runtime instead of compile time.</p>
+</div>
+<div class="paragraph">
+<p>You can add them to the JVM launch command with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Prometheus: <code>--add-modules micrometer.registry.prometheus,io.prometheus.metrics.model</code></p>
+</li>
+<li>
+<p>InfluxDB: <code>--add-modules micrometer.registry.influx</code></p>
+</li>
+<li>
+<p>JMX: <code>--add-modules micrometer.registry.jmx</code></p>
+</li>
+<li>
+<p>Graphite: <code>--add-modules micrometer.registry.graphite</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// Add to your module-info.java</span>
+requires micrometer.registry.prometheus;
+requires io.prometheus.metrics.model;
+requires micrometer.registry.influx;
+requires micrometer.registry.jmx;
+requires micrometer.registry.graphite;</code></pre>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_dropwizard_metrics">Dropwizard Metrics</h4>
@@ -1733,7 +1788,7 @@ multicast join is not supported on the module path on macOS, instead Hazelcast T
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-06-19 05:02:49 UTC
+Last updated 2025-06-19 10:03:37 UTC
 </div>
 </div>
 </body>
