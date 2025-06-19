@@ -533,6 +533,35 @@ the Java Protocol Buffers library supports it. Here is an https://github.com/ver
 |automatic
 |===
 
+{VertX} Micrometer Metrics supports different backend registries.
+It requires you to add one of the following dependencies:
+
+- Prometheus: `io.micrometer:micrometer-registry-prometheus`
+- InfluxDB: `io.micrometer:micrometer-registry-influx`
+- JMX: `io.micrometer:micrometer-registry-jmx`
+- Graphite: `io.micrometer:micrometer-registry-graphite`
+
+These dependencies are optional since not everyone need them and when used, they are required at runtime instead of compile time.
+
+You can add them to the JVM launch command with:
+
+- Prometheus: `--add-modules micrometer.registry.prometheus,io.prometheus.metrics.model`
+- InfluxDB: `--add-modules micrometer.registry.influx`
+- JMX: `--add-modules micrometer.registry.jmx`
+- Graphite: `--add-modules micrometer.registry.graphite`
+
+Alternatively you can also add them to your module descriptor (even though your application does not use them) which usually triggers tools to add them automatically at runtime.
+
+[source,java]
+----
+// Add to your module-info.java
+requires micrometer.registry.prometheus;
+requires io.prometheus.metrics.model;
+requires micrometer.registry.influx;
+requires micrometer.registry.jmx;
+requires micrometer.registry.graphite;
+----
+
 ==== Dropwizard Metrics
 
 |===
