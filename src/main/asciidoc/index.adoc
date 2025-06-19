@@ -127,7 +127,16 @@ You can find the https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-example
 
 === Sql Client Template generation
 
-Todo (needs https://github.com/vert-x3/vertx-examples/pull/474/files)
+Here is the bare minimum required by your module to generate a Sql Client Template.
+
+[source,java]
+----
+requires static io.vertx.codegen.api;
+requires io.vertx.sql.client;
+requires io.vertx.sql.client.templates;
+----
+
+You can find the https://github.com/vert-x3/vertx-examples/tree/5.x/jpms-examples#sql-client-template[Sql Client Template] among our set of examples.
 
 == Components
 
